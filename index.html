@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./styles/css/style.css">
+    <title>Tourism Tour</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="video-box">
+            <video autoplay muted loop src="./styles/images/Header.m4v">
+            </video>
+        </div>
+        <nav class="header-nav navbar navbar-expand-sm w-100">
+            <div class="container">
+                <a class="navbar-brand " href="#">Brand</a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarControl"
+                    aria-expanded="false">
+                    <span class="bi bi-justify-right"></span>
+                </button>
+                <div class="collapse navbar-collapse w-50" id="navbarControl" dir="rtl">
+                    <div class="navbar-nav w-100 justify-content-start justify-content-md-between">
+                        <a class="nav-link " aria-current="page" href="#">Home</a>
+                        <a class="nav-link " href="#" data-bs-toggle="modal" id="album-link"
+                            data-bs-target="#album-modal">Album</a>
+                        <a class="nav-link " href="#">Articles</a>
+                        <a class="nav-link " href="#" data-bs-toggle="modal" id="signin-link"
+                            data-bs-target="#signin-modal-box">Signin</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="content-box w-100 position-absolute text-light">
+            <div class="container-md h-100 w-100">
+                <div class="content-bar d-flex flex-column h-100 w-100 justify-content-center">
+                    <h2 class="content-title mb-5 text-lg=start">Be ready for your best exp</h2>
+                    <p class="content-text mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus
+                        culpa
+                        quam,
+                        asperiores deserunt sequi fuga nam consequatur. Suscipit voluptas, unde sunt provident mollitia
+                        quo
+                        voluptate praesentium eaque qui, nesciunt placeat?</p>
+
+                    <div class="row px-2">
+                        <button class="btn my-1 btn-outline-light rounded-2 col-md-3 col-12 order-3 order-md-0"
+                            type="button" id="button-add">Select</button>
+                        <div class="dropdown col-lg-6 col-md-9 col-12 p-0">
+                            <input type="text" class="my-1 w-100 p-2 rounded-2 order-0 order-md-1"
+                                placeholder="Select Your Country" id="search-box" data-bs-toggle="dropdown">
+                            <ul class="dropdown-menu w-100">
+                            </ul>
+                        </div>
+                        <select class="rounded-2 p-2 my-1 col-lg-3 col-12 order-1 order-md-2" id="option-box">
+                            <option selected>select Your City</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade modal-xl" id="signin-modal-box">
+        <div class="modal-dialog">
+            <div class="modal-content" id="signin-modal">
+                <signin-page></signin-page>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-xl" id="album-modal">
+        <div class="modal-dialog">
+            <div class="modal-content" id="album-body">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Album</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="description d-flex align-items-center">
+        <div class="description-box row row-cols-lg-3 w-100">
+        </div>
+    </div>
+
+    <div class="services-box container-md row m-auto pad">
+
+    </div>
+
+    <div class="main-hotels my-4">
+        <div class="text-start container-md ">
+            <h2 class="my-2">Popular Hotels</h2>
+        </div>
+        <div class="row w-100 m-auto container-md" id="hotels">
+        </div>
+        <div id="btn-box" class="w-100 text-center my-2">
+        </div>
+    </div>
+
+    <div class="tour-list">
+        <div class="text-start container-md m-auto row">
+            <div class="col-md col-12">
+                <p>HURRY UP, THESE ARE EXPIRING SOON.</p>
+                <h2 class="my-2">Domestic Tours</h2>
+            </div>
+            <div class="col-md col-12 d-flex justify-content-md-end align-items-md-end">
+                <a class="link-dark" data-bs-toggle="modal" href="#tour-list">See all details <span
+                        class="bi bi-chevron-double-right"></span> </a>
+            </div>
+        </div>
+
+        <div class="tour-list-box  row my-3 mx-auto w-100">
+
+        </div>
+        <div class="tour-btn-box text-center mb-5 w-100">
+
+        </div>
+    </div>
+
+    <div class="modal fade modal-xl" id="tour-list" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tours List</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="tour-box">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="monthly-tours-box my-5">
+        <div class="w-100 text-center">
+            <h2>Monthly Tours</h2>
+        </div>
+        <div class="accordion my-4" id="accordion">
+
+        </div>
+    </div>
+
+    <!-- <div class="modal fade modal-xl" id="reserve-box">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tours List</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning text-center">
+                        <h3></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body w-100 h-100 alert mb-0 alert-danger text-center">
+                <h5>Please <a href="#signin-modal-box" class="text-danger" data-bs-toggle="modal">Login</a> in Your Account</h5>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer-box bg-light shadow-sm p-2">
+        <div class="row">
+            <div class="row col-11 mx-auto col-md-6 text-center">
+                <ul class="nav col-12 col-sm-6 flex-column my-2">
+                    <li class="h3 nav-item">Section</li>
+                    <li class="h5 nav-item text-secondary">Home</li>
+                    <li class="h5 nav-item text-secondary">About</li>
+                    <li class="h5 nav-item text-secondary">Articles</li>
+                    <li class="h5 nav-item text-secondary">Projects</li>
+                </ul>
+                <ul class="nav col-12 col-sm-6 flex-column my-2">
+                    <li class="h3 nav-item">Section</li>
+                    <li class="h5 nav-item text-secondary">Home</li>
+                    <li class="h5 nav-item text-secondary">About</li>
+                    <li class="h5 nav-item text-secondary">Articles</li>
+                    <li class="h5 nav-item text-secondary">Projects</li>
+                </ul>
+            </div>
+            <div class="row col-11 mx-auto col-md-6 text-md-start text-center">
+                <hr class="d-md-none">
+                <h2>Subscribe to our newsletter</h2>
+                <h5 class="text-secondary">Monthly digest of what's new and exciting from us.</h5>
+                <div class="">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Email Address">
+                        <button class="btn btn-secondary ms-2 rounded-2" type="button"
+                            id="button-addon1">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="text-center mb-4">
+            <span class="bi bi-twitter mx-2 h3"></span>
+            <span class="bi bi-facebook mx-2 h3"></span>
+            <span class="bi bi-telegram mx-2 h3"></span>
+        </div>
+    </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>

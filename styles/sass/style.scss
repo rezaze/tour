@@ -1,0 +1,416 @@
+@import './../../node_modules/bootstrap/scss/_functions';
+
+$blue: #0d6efd;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #d63384;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #198754;
+$teal: #20c997;
+$cyan: #0dcaf0;
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecefb2;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: rgba(6, 6, 6, 0.669);
+
+:root {
+    --header-text: #ffffff;
+}
+
+$primary: $blue;
+$secondary: $gray-600;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-900;
+$shadow: $black;
+
+// colors
+
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+$font-size-root: null;
+$font-size-base: 1rem;
+$font-size-xx-lg: $font-size-base * 1.75;
+$font-size-x-lg: $font-size-base * 1.5;
+$font-size-lg: $font-size-base * 1.25;
+$font-size-md: $font-size-base * .875;
+$font-size-sm: $font-size-base * .750;
+$font-size-x-sm: $font-size-base * .625;
+$font-size-xx-sm: $font-size-base * .5;
+
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+
+$font-weight-base: $font-weight-normal;
+
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+
+// font
+
+$navbar-toggler-padding-y: 0.25rem;
+$navbar-toggler-padding-x: 0.5rem;
+
+
+
+@mixin textAria($color, $font-size) {
+    color: $color;
+    font-size: $font-size;
+}
+
+// Source mixin
+@mixin make-container($padding-x: $container-padding-x) {
+    width: 100%;
+    padding-right: $padding-x;
+    padding-left: $padding-x;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin positions($left, $top) {
+    left: $left;
+    top: $top;
+}
+
+@mixin setSize($height, $width) {
+    height: $height;
+    width: $width;
+}
+
+@mixin setBackGround {
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    min-height: 90vh;
+    height: fit-content;
+
+    .video-box {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+
+    .navbar {
+        z-index: 99;
+        position: fixed;
+        transform: all .6s;
+
+        .container {
+            @include make-container(10px);
+            max-width: 1450px;
+
+            .navbar-brand {
+                color: var(--header-text);
+            }
+
+            span {
+                color: var(--header-text);
+            }
+
+            .navbar-collapse {
+                flex-grow: 0;
+
+                .nav-link {
+                    transition: all 0.4s;
+                    color: var(--header-text);
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                }
+            }
+
+
+        }
+    }
+
+    .content-box {
+        @include positions(0, 0);
+        @extend .w-md-50;
+        background-color: $shadow;
+        height: 90vh;
+
+
+        .content-bar {
+
+            .content-text {
+                font-size: $font-size-sm;
+            }
+
+            .content-btn {
+                background-color: transparent;
+                position: relative;
+                overflow: hidden;
+
+                &::after {
+                    @include positions(0, 0);
+                    @include setSize(100%, 100%);
+                    content: '';
+                    background-color: $gray-200;
+                    position: absolute;
+                    border-radius: 5px;
+                    transform: translate(-115px);
+                    transition: all 0.5s;
+
+                }
+
+
+                &:hover::after {
+                    transform: translate(0px);
+                }
+            }
+        }
+    }
+}
+
+.description {
+    min-height: 70vh;
+    height: fit-content;
+    background-color: $gray-400;
+    $blue: rgb(35, 35, 251);
+    $cyan: rgb(179, 176, 255);
+    $green: #198754;
+    $teal: #74bfa9;
+    $pink: #d76ca1;
+    $red: #dc3545;
+    $brown: rgb(135, 39, 39);
+    $light-brown: rgb(157, 75, 75);
+    $i: 0;
+
+    $colors: $brown $light-brown,
+    $green $teal,
+    $red $pink;
+
+
+
+    .description-box {
+        .description-bar {
+
+            span {
+                background-color: $cyan;
+                color: $blue;
+                font-weight: bold;
+                font-size: $font-size-x-lg;
+                cursor: pointer;
+                transition: all 0.5s;
+                box-shadow: 0px 0px 4px 1px $blue inset;
+            }
+
+            @each $color ,
+            $background-color in $colors {
+                $i: $i+1;
+
+                &:nth-child(#{$i}) {
+                    span {
+                        &:hover {
+                            color: $color;
+                            box-shadow: 0px 0px 4px 30px $background-color inset;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+
+
+
+.main-hotels {
+    min-height: 80vh;
+    height: fit-content;
+    background-color: $gray-400;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .text-start {}
+
+    .parent {
+        background-color: transparent;
+        border: none;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    .container-md {
+
+        .hotel-bar {
+
+            .img-bar {
+                height: 200px;
+                cursor: pointer;
+                transition: all .6s;
+
+                &:hover {
+                    animation: animationImage 2s;
+                }
+
+            }
+
+            .hotel-btn {
+                background: $gray-700;
+                color: $gray-700;
+                border: 2px solid $gray-700;
+                position: relative;
+                overflow: hidden;
+                transform: all .5s !important;
+                box-shadow: 0px 0px 3px 30px $gray-100 inset;
+
+                &:hover {
+                    box-shadow: 0px 0px 0px 0px $gray-100 inset;
+                    color: $gray-100;
+                }
+            }
+
+        }
+
+    }
+
+
+}
+
+
+.tour-list {
+
+    .tour-list-box {
+        .tour-list-bar {
+            height: 600px;
+            cursor: pointer;
+            @include setBackGround();
+            transition: all .5s;
+            position: relative;
+            overflow: hidden;
+            transform: rotateX(20deg);
+
+            &:hover {
+                transform: translateY(-10px);
+            }
+
+            &::after {
+                @include setSize(100%, 100%);
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: all .5s;
+
+            }
+
+            &:hover::after {
+                background-color: #212529c8;
+            }
+        }
+    }
+}
+
+
+.active-btn {
+    transform: scale(1.3);
+}
+
+.modal {
+    .modal-body {
+        .list-bar {
+            .list-image {
+                height: 200px;
+                overflow: hidden;
+
+                img {
+                    cursor: pointer;
+                    transition: all .6s;
+
+                    &:hover {
+                        transform: scale(1.5) rotate(15deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.monthly-tours-box {
+
+
+    .carousel-inner {
+
+        img {
+            @extend .h-400-md;
+            height: 200px;
+        }
+    }
+
+}
+
+
+
+// media
+
+@media screen and (max-width:768px) {
+    .pad {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+}
+
+@media screen and (min-width:'768px') {
+    .w-md-50 {
+        width: 50% !important;
+    }
+
+    .h-400-md {
+        height: 400px;
+    }
+}
+
+@media screen and (min-width:'998px') {
+    .h-400-md {
+        height: 600px;
+    }
+}
+
+//animations
+
+@keyframes animationImage {
+    0% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

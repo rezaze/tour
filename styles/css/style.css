@@ -1,0 +1,223 @@
+:root {
+  --header-text: #ffffff;
+}
+
+.header {
+  min-height: 90vh;
+  height: fit-content;
+}
+.header .video-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+.header .video-box video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.header .navbar {
+  z-index: 99;
+  position: fixed;
+  transform: all 0.6s;
+}
+.header .navbar .container {
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1450px;
+}
+.header .navbar .container .navbar-brand {
+  color: var(--header-text);
+}
+.header .navbar .container span {
+  color: var(--header-text);
+}
+.header .navbar .container .navbar-collapse {
+  flex-grow: 0;
+}
+.header .navbar .container .navbar-collapse .nav-link {
+  transition: all 0.4s;
+  color: var(--header-text);
+}
+.header .navbar .container .navbar-collapse .nav-link:hover {
+  opacity: 0.8;
+}
+.header .content-box {
+  left: 0;
+  top: 0;
+  background-color: rgba(6, 6, 6, 0.669);
+  height: 90vh;
+}
+.header .content-box .content-bar .content-text {
+  font-size: 0.75rem;
+}
+.header .content-box .content-bar .content-btn {
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+.header .content-box .content-bar .content-btn::after {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  content: "";
+  background-color: rgba(233, 236, 239, 0.6980392157);
+  position: absolute;
+  border-radius: 5px;
+  transform: translate(-115px);
+  transition: all 0.5s;
+}
+.header .content-box .content-bar .content-btn:hover::after {
+  transform: translate(0px);
+}
+
+.description {
+  min-height: 70vh;
+  height: fit-content;
+  background-color: #ced4da;
+}
+.description .description-box .description-bar span {
+  background-color: rgb(179, 176, 255);
+  color: rgb(35, 35, 251);
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.5s;
+  box-shadow: 0px 0px 4px 1px rgb(35, 35, 251) inset;
+}
+.description .description-box .description-bar:nth-child(1) span:hover {
+  color: rgb(135, 39, 39);
+  box-shadow: 0px 0px 4px 30px rgb(157, 75, 75) inset;
+}
+.description .description-box .description-bar:nth-child(2) span:hover {
+  color: #198754;
+  box-shadow: 0px 0px 4px 30px #74bfa9 inset;
+}
+.description .description-box .description-bar:nth-child(3) span:hover {
+  color: #dc3545;
+  box-shadow: 0px 0px 4px 30px #d76ca1 inset;
+}
+
+.main-hotels {
+  min-height: 80vh;
+  height: fit-content;
+  background-color: #ced4da;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.main-hotels .parent {
+  background-color: transparent;
+  border: none;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.main-hotels .container-md .hotel-bar .img-bar {
+  height: 200px;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+.main-hotels .container-md .hotel-bar .img-bar:hover {
+  animation: animationImage 2s;
+}
+.main-hotels .container-md .hotel-bar .hotel-btn {
+  background: #495057;
+  color: #495057;
+  border: 2px solid #495057;
+  position: relative;
+  overflow: hidden;
+  transform: all 0.5s !important;
+  box-shadow: 0px 0px 3px 30px #f8f9fa inset;
+}
+.main-hotels .container-md .hotel-bar .hotel-btn:hover {
+  box-shadow: 0px 0px 0px 0px #f8f9fa inset;
+  color: #f8f9fa;
+}
+
+.tour-list .tour-list-box .tour-list-bar {
+  height: 600px;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+  transform: rotateX(20deg);
+}
+.tour-list .tour-list-box .tour-list-bar:hover {
+  transform: translateY(-10px);
+}
+.tour-list .tour-list-box .tour-list-bar::after {
+  height: 100%;
+  width: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+.tour-list .tour-list-box .tour-list-bar:hover::after {
+  background-color: rgba(33, 37, 41, 0.7843137255);
+}
+
+.active-btn {
+  transform: scale(1.3);
+}
+
+.modal .modal-body .list-bar .list-image {
+  height: 200px;
+  overflow: hidden;
+}
+.modal .modal-body .list-bar .list-image img {
+  cursor: pointer;
+  transition: all 0.6s;
+}
+.modal .modal-body .list-bar .list-image img:hover {
+  transform: scale(1.5) rotate(15deg);
+}
+
+.monthly-tours-box .carousel-inner img {
+  height: 200px;
+}
+
+.bi-eye {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .pad {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .w-md-50, .header .content-box {
+    width: 50% !important;
+  }
+  .h-400-md, .monthly-tours-box .carousel-inner img {
+    height: 400px;
+  }
+}
+@media screen and (min-width: 998px) {
+  .h-400-md, .monthly-tours-box .carousel-inner img {
+    height: 600px;
+  }
+}
+@keyframes animationImage {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */

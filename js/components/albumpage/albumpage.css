@@ -1,0 +1,26 @@
+.option-bar {
+    transition: all .4s;
+}
+
+
+.option-bar:hover {
+    transform: scale(1.2);
+}
+
+.photo-bar {
+    overflow: hidden;
+}
+
+.img-fluid {
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.img-fluid:hover {
+    transform: scale(1.5);
+}
+
+.active {
+    color: rgb(255, 242, 0) !important;
+    border-bottom: 1px solid rgb(255, 242, 0);
+}
